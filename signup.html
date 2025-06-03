@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta - WorkFinderPro</title>
+    <link rel="stylesheet" href="styles_signup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <a href="index.html"><img src="images/imagesolologo.png" alt="WorkFinderPro"></a>
+            <h2>Crear Cuenta</h2>
+            <form id="signupForm" method="POST" action="signup.php">
+    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+    <input type="email" name="email" id="email" placeholder="Email- correo" required>
+    <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" required>
+    <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmar Contraseña" required>
+
+    <select name="rol" required>
+        <option value="">Selecciona un rol</option>
+        <option value="1">Candidato</option>
+        <option value="2">Empresa</option>
+    </select>
+
+    <button type="submit">Crear</button>
+</form>
+        </div>
+    </div>
+    <script>
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password1 = document.getElementById('password1').value;
+    const password2 = document.getElementById('password2').value;
+
+    // Validar campos vacíos
+    if (!name || !email || !password1 || !password2) {
+        alert("Por favor, completa todos los campos.");
+        e.preventDefault();
+        return;
+    }
+
+    // Validar formato del email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert("Por favor, ingresa un correo electrónico válido.");
+        e.preventDefault();
+        return;
+    }
+
+    // Validar longitud de contraseña
+    if (password1.length < 6) {
+        alert("La contraseña debe tener al menos 6 caracteres.");
+        e.preventDefault();
+        return;
+    }
+
+    // Validar coincidencia de contraseñas
+    if (password1 !== password2) {
+        alert("Las contraseñas no coinciden.");
+        e.preventDefault();
+        return;
+    }
+});
+</script>
+</body>
+</html>

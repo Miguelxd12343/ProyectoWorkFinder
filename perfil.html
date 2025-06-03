@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Perfil</title>
+  <link rel="stylesheet" href="styles_perfil.css">
+  <style>
+    /* Estilo para que la caja de la foto se vea bien y sea clickeable */
+    .left-panel .photo-box {
+      background-color: #444; /* Fondo gris oscuro para el área */
+      color: white; /* Texto blanco */
+      padding: 20px;
+      text-align: center;
+      cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    /* Estilo para el input file oculto */
+    .left-panel input[type="file"] {
+      display: none; /* Oculta el campo de archivo */
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <!-- Envolvemos la imagen con un enlace para redirigir al hacer clic -->
+     
+    <a href="index.html"><img src="images/imagesolologo.png" class="nav-logo" alt="Logo"></a>
+
+    <nav> 
+      <a href="index.html">Inicio</a>
+      <a href="#">Sobre nosotros</a>
+      <a href="#">Servicios</a>
+    </nav>
+  </header>
+
+  <main class="form-container">
+    <div class="left-panel">
+      <!-- Aquí la caja que el usuario clickea para seleccionar la foto -->
+      <label for="photo-upload" class="photo-box">Foto</label>
+      <input type="file" id="photo-upload" accept=".jpg, .jpeg, .png">
+
+      <label>Nombre: <input type="text"></label>
+      <label>Edad: <input type="number"></label>
+      <label>Cédula: <input type="text"></label>
+      <label>Estado Civil: <input type="text"></label>
+      <label>Teléfono: <input type="tel"></label>
+      <label>Dirección: <input type="text"></label>
+      <label>Empleo al que quiere aplicar:
+        <select>
+          <option>Seleccione</option>
+          <option>Diseñador</option>
+          <option>Programador</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="right-panel">
+      <label>Descripción General (Estudios - experiencia):</label>
+      <textarea rows="10"></textarea>
+      <div class="upload-section">
+        <label for="cv-upload" class="upload-label">SUBIR HOJA DE VIDA Y DIPLOMAS (PDF) ⬆</label>
+        <input type="file" id="cv-upload" hidden>
+      </div>
+      <button class="submit-btn">ENVIAR</button>
+    </div>
+  </main>
+</body>
+</html>

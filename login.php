@@ -1,0 +1,67 @@
+<?php
+  require_once 'SessionManager.php';
+  require_once 'conexion.php'; 
+
+  $_session = new SessionManager();
+  $error = "";
+
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $user = $_POST['username'];
+      $pass = $_POST['password'];
+
+      $stmt = $pdo->prepare("SELECT id, password FROM usuarios WHERE email = ?");
+      $stmt->execute([$user]);
+      $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      if ($usuario && password_verify($pass, $usuario['password'])) {
+          $_session->login($usuario['id'], $user);
+          header('Location: perfil.html');
+          exit;
+      } else {
+          $error = "Correo o contraseña incorrectos.";
+      }
+  }
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORKFINDERPRO Login</title>
+  <link rel="stylesheet" href="styles_login.css">
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <a href="index.html" class="back-arrow">←</a>
+      <img src="images/imagesolologo.png" class="logo" alt="Logo">
+      <h2>WORKFINDERPRO</h2>
+      <h3>Login</h3>
+      <form id="loginForm">
+        <label for="email">Email- correo</label>
+        <input type="email" id="email" name="username" placeholder="Ingrese su correo" required>
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+
+        <button type="submit" class="login-button">Login</button>
+        <p class="register-text">¿No tiene cuenta aún? <a href="signup.html">CREAR CUENTA</a></p>
+      </form>
+    </div>
+    <div class="image-section">
+      <img src="images/4671 1.png" alt="Entrevista laboral">
+    </div>
+  </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e;
+
+      const email = document.getElementById('email').value;
+      sessionStorage.setItem('userEmail', email);
+
+      window.location.href = 'perfil.html';
+    });
+  </script>
+</body>
+</html>
