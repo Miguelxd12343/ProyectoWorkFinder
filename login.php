@@ -1,26 +1,28 @@
 <?php
-  require_once 'SessionManager.php';
-  require_once 'conexion.php'; 
+require_once 'conexion.php'; 
+session_start();
 
-  $_session = new SessionManager();
-  $error = "";
+$error = "";
 
-  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      $user = $_POST['username'];
-      $pass = $_POST['password'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $user = $_POST['username'] ?? '';
+    $pass = $_POST['password'] ?? '';
 
-      $stmt = $pdo->prepare("SELECT id, password FROM usuarios WHERE email = ?");
-      $stmt->execute([$user]);
-      $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt = $pdo->prepare("SELECT IdUsuario, Contrasena, Nombre, IdRol FROM usuario WHERE Email = ?");
+    $stmt->execute([$user]);
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-      if ($usuario && password_verify($pass, $usuario['password'])) {
-          $_session->login($usuario['id'], $user);
-          header('Location: perfil.html');
-          exit;
-      } else {
-          $error = "Correo o contraseña incorrectos.";
-      }
-  }
+    if ($usuario && password_verify($pass, $usuario['Contrasena'])) {
+        $_SESSION['usuario_id'] = $usuario['IdUsuario'];
+        $_SESSION['usuario_nombre'] = $usuario['Nombre'];
+        $_SESSION['usuario_rol'] = $usuario['IdRol'];
+
+        header('Location: perfil.html');
+        exit;
+    } else {
+        $error = "Correo o contraseña incorrectos.";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +40,7 @@
       <img src="images/imagesolologo.png" class="logo" alt="Logo">
       <h2>WORKFINDERPRO</h2>
       <h3>Login</h3>
-      <form id="loginForm">
+      <form id="loginForm" method="POST" action="login.php">
         <label for="email">Email- correo</label>
         <input type="email" id="email" name="username" placeholder="Ingrese su correo" required>
 
