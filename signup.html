@@ -17,11 +17,12 @@
     <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" required>
     <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmar Contraseña" required>
 
-    <select name="rol" required>
-        <option value="">Selecciona un rol</option>
-        <option value="1">Candidato</option>
-        <option value="2">Empresa</option>
-    </select>
+    <select name="rol" id="rol" required>
+    <option value="">Seleccione un rol</option>
+    <option value="1">Administrador</option>
+    <option value="2">Empresa</option>
+    <option value="3">Candidato</option>
+</select>
 
     <button type="submit">Crear</button>
 </form>
@@ -34,14 +35,14 @@
     const password1 = document.getElementById('password1').value;
     const password2 = document.getElementById('password2').value;
 
-    // Validar campos vacíos
+    
     if (!name || !email || !password1 || !password2) {
         alert("Por favor, completa todos los campos.");
         e.preventDefault();
         return;
     }
 
-    // Validar formato del email
+    
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         alert("Por favor, ingresa un correo electrónico válido.");
@@ -49,14 +50,14 @@
         return;
     }
 
-    // Validar longitud de contraseña
+    
     if (password1.length < 6) {
         alert("La contraseña debe tener al menos 6 caracteres.");
         e.preventDefault();
         return;
     }
 
-    // Validar coincidencia de contraseñas
+    
     if (password1 !== password2) {
         alert("Las contraseñas no coinciden.");
         e.preventDefault();

@@ -51,4 +51,4 @@ CREATE TABLE solicitudempleo (
 );
 
 
-INSERT INTO rol (NombreRol) VALUES ('Candidato'), ('Empresa');
+INSERT INTO rol (NombreRol) VALUES ('Administrador'), ('Empresa'), ('Candidato');

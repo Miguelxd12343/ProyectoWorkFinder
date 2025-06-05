@@ -48,7 +48,7 @@ body {
   
   }
   
-/* Estilo de etiquetas del panel izquierdo */
+
 .left-panel label {
   color: white;
   font-weight: bold;
@@ -56,32 +56,32 @@ body {
   margin-top: 10px;
 }
 
-/* Estilo para los campos de texto con borde oscuro */
+
 .left-panel input, 
 .left-panel select {
-  border: 2px solid #000; /* Borde negro */
+  border: 2px solid #000; 
   padding: 8px;
-  background-color: #ffffff; /* Fondo oscuro para el campo */
-  color: rgb(0, 0, 0); /* Texto en blanco */
-  width: 100%; /* Ajusta al tamaño del contenedor */
-  box-sizing: border-box; /* Asegura que el padding no cambie el tamaño total */
-  appearance: none; /* Elimina el estilo predeterminado del select */
+  background-color: #ffffff;
+  color: rgb(0, 0, 0); 
+  width: 100%; 
+  box-sizing: border-box; 
+  appearance: none; 
 }
 
-/* Opcional: cambia el borde al pasar el cursor por encima */
+
 .left-panel input:hover, 
 .left-panel select:hover {
-  border-color: #555; /* Borde ligeramente más claro al pasar el ratón */
+  border-color: #555; 
 }
 
-/* Opcional: cambiar el borde cuando el campo está en foco (enfoque) */
+
 .left-panel input:focus, 
 .left-panel select:focus {
-  border-color: #aaa; /* Borde claro cuando está enfocado */
-  outline: none; /* Quitar el contorno por defecto */
+  border-color: #aaa; 
+  outline: none; 
 }
 
-  /* Estilo de etiquetas del panel derecho */
+  
   .right-panel label {
     font-weight: bold;
     display: block;
@@ -94,23 +94,23 @@ body {
     padding: 5px;
     margin-top: 5px;
     border-radius: 10px;
-    border: 2px solid #000; /* Borde negro */
+    border: 2px solid #000; 
   }
   
-/* Estilo para el área de la foto */
+
 .photo-box {
   width: 100px;
   height: 140px;
   background: lightgray;
   border: 2px solid black;
   display: flex;
-  align-items: center;  /* Centra el texto verticalmente */
-  justify-content: center;  /* Centra el texto horizontalmente */
+  align-items: center;  
+  justify-content: center;  
   margin-bottom: 15px;
-  text-align: center;  /* Asegura que el texto esté centrado */
+  text-align: center;  
   color: white;
   font-weight: bold;
-  font-size: 18px;  /* Ajusta el tamaño del texto si es necesario */
+  font-size: 18px;  
 }
 
   
@@ -121,7 +121,7 @@ body {
 .upload-label {
     background: #e0e0e0;
     padding: 10px;
-    border: 2px solid #000; /* Borde negro */
+    border: 2px solid #000; 
     border-radius: 10px;
     display: inline-block;
     cursor: pointer;
