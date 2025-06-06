@@ -11,7 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             $stmt = $pdo->prepare("INSERT INTO usuario (Nombre, Email, Contrasena, IdRol) VALUES (?, ?, ?, ?)");
             $stmt->execute([$nombre, $email, $contrasena, $rol]);
-            echo "¡Registro exitoso!";
+
+            // Redirige a una página de éxito Porfin
+            header("Location: RegistroExitoso.html");
+            exit;
+
         } catch (PDOException $e) {
             if ($e->errorInfo[1] == 1062) {
                 echo "Error: El correo ya está registrado.";
