@@ -1,5 +1,6 @@
 <?php
-require 'conexion.php';
+require_once(__DIR__ . '/../php/conexion.php');
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'] ?? null;
@@ -13,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$nombre, $email, $contrasena, $rol]);
 
             // Redirige a una página de éxito Porfin
-            header("Location: RegistroExitoso.html");
+            header("Location: HTML/RegistroExitoso.html");
             exit;
 
         } catch (PDOException $e) {
