@@ -1,6 +1,5 @@
 <?php
-require_once(__DIR__ . '/../php/conexion.php');
-
+require_once(__DIR__ . '/conexion.php'); // Asegúrate que conexion.php esté bien configurado
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'] ?? null;
@@ -13,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt = $pdo->prepare("INSERT INTO usuario (Nombre, Email, Contrasena, IdRol) VALUES (?, ?, ?, ?)");
             $stmt->execute([$nombre, $email, $contrasena, $rol]);
 
-            // Redirige a una página de éxito Porfin
-            header("Location: HTML/RegistroExitoso.html");
+            // Redirige correctamente al HTML de éxito
+            header("Location: ../HTML/RegistroExitoso.html");
             exit;
 
         } catch (PDOException $e) {
