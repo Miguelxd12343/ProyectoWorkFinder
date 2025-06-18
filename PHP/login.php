@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <button type="submit" class="login-button">Login</button>
         <p class="register-text">¿No tiene cuenta aún? <a href="../HTML/signup.html">CREAR CUENTA</a></p>
+        <p class="register-text">¿Olvido su contraseña? <a href="../HTML/forgotpassword.html">RECUPERAR CONTRASEÑA</a></p>
       </form>
       <?php if (!empty($error)): ?>
         <p style="color: red; text-align: center;"><?= htmlspecialchars($error) ?></p>
