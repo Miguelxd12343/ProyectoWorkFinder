@@ -51,7 +51,7 @@ CREATE TABLE solicitudempleo (
 );
 
 
-INSERT INTO rol (NombreRol) VALUES ('Administrador'), ('Empresa'), ('Candidato');
+INSERT INTO rol (NombreRol) VALUES ('Empresa'), ('Candidato');
 
 ALTER TABLE usuario 
 ADD COLUMN reset_token VARCHAR(255) DEFAULT NULL,

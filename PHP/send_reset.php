@@ -36,10 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->setFrom('sebastianmatth06@gmail.com', 'workfinder');
             $mail->addAddress($email);
             $mail->Subject = 'Recuperar contraseña';
-            $mail->Body = 'Hola,<br><br>Este es un correo para solicitar tu recuperación de contraseña. ' .
-                         'Por favor, visita la siguiente página para restablecer tu contraseña: ' .
-                         '<a href="' . $link . '">Restablecer Contraseña</a>' .
-                         '<br><br>Si no solicitaste esto, ignora este correo.';
+            $mail->Body = "Hola,<br><br>Este es un correo para solicitar tu recuperación de contraseña. " .
+                         "Por favor, visita la siguiente página para restablecer tu contraseña: " .
+                         '<a href="'. $link .'">Restablecer Contraseña</a>' .
+                         "<br><br>Si no solicitaste esto, ignora este correo.";
             $mail->send();
             echo "Correo enviado. Revisa tu bandeja.";
         } catch (Exception $e) {

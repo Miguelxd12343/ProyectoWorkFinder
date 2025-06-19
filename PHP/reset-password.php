@@ -14,10 +14,20 @@ if (!$user) {
     die("Token inválido o expirado.");
 }
 ?>
-
-<form action="/ProyectoWorkFinder/PHP/update-password.php" method="POST">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualizar contraseña</title>
+  <link rel="stylesheet" href="../CSS/reset-password.css">
+</head>
+<body>
+  <form action="/ProyectoWorkFinder/PHP/update-password.php" method="POST">
   <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
   <label>Nueva contraseña:</label><br>
   <input type="password" name="password" required><br><br>
   <input type="submit" value="Actualizar contraseña">
 </form>
+</body>
+</html>

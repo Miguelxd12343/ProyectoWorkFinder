@@ -1,3 +1,7 @@
+<?php
+require 'auth_guard.php'; 
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

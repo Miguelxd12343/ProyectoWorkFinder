@@ -1,4 +1,9 @@
+
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+ob_start();
 require_once(__DIR__ . '/conexion.php');
 session_start();
 
@@ -16,8 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['usuario_id'] = $usuario['IdUsuario'];
         $_SESSION['usuario_nombre'] = $usuario['Nombre'];
         $_SESSION['usuario_rol'] = $usuario['IdRol'];
-
-        header('Location: ../HTML/perfil.html');
+        echo "Login exitoso";
+        header('Location: ../PHP/perfil.php');
         exit;
     } else {
         $error = "Correo o contraseña incorrectos.";

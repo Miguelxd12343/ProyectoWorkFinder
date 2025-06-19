@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . '/conexion.php'); // Asegúrate que conexion.php esté bien configurado
+require_once(__DIR__ . '/conexion.php'); 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'] ?? null;
