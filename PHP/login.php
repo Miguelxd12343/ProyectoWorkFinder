@@ -21,8 +21,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['usuario_id'] = $usuario['IdUsuario'];
         $_SESSION['usuario_nombre'] = $usuario['Nombre'];
         $_SESSION['usuario_rol'] = $usuario['IdRol'];
-        echo "Login exitoso";
-        header('Location: ../PHP/perfil.php');
+
+        // Redirección según rol
+        switch ($usuario['IdRol']) {
+            case 1: // Empresa
+                header('Location: ../PHP/dashboard_empresa.php');
+                break;
+            case 2: // Candidato
+                header('Location: ../PHP/dashboard_usuario.php');
+                break;
+            case 3: // Administrador
+                header('Location: ../PHP/dashboard_admin.php');
+                break;
+            default:
+                $error = "Rol no reconocido.";
+        }
         exit;
     } else {
         $error = "Correo o contraseña incorrectos.";
@@ -30,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
+<!-- HTML igual al anterior -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -64,11 +78,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <img src="../images/4671 1.png" alt="Entrevista laboral">
     </div>
   </div>
-  <script>
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-      const email = document.getElementById('email').value;
-      sessionStorage.setItem('userEmail', email);
-    });
-  </script>
 </body>
 </html>

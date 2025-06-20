@@ -32,8 +32,7 @@ require 'auth_guard.php';
 
     <nav> 
       <a href="../index.html">Inicio</a>
-      <a href="#">Sobre nosotros</a>
-      <a href="#">Servicios</a>
+      
     </nav>
   </header>
 

@@ -25,12 +25,31 @@
                     <option value="2">Candidato</option>
                 </select>
 
+                <!-- Campos adicionales solo para Empresa -->
+                <div id="empresaExtra" style="display: none;">
+                    <input type="text" name="direccion_empresa" id="direccion_empresa" placeholder="Dirección de la empresa">
+                    <input type="text" name="identificacion_fiscal" id="identificacion_fiscal" placeholder="NIT o CIF">
+                </div>
+
                 <button type="submit">Crear</button>
             </form>
         </div>
     </div>
 
     <script>
+        document.getElementById('rol').addEventListener('change', function () {
+            const extraFields = document.getElementById('empresaExtra');
+            if (this.value === '1') { // Empresa
+                extraFields.style.display = 'block';
+                document.getElementById('direccion_empresa').required = true;
+                document.getElementById('identificacion_fiscal').required = true;
+            } else {
+                extraFields.style.display = 'none';
+                document.getElementById('direccion_empresa').required = false;
+                document.getElementById('identificacion_fiscal').required = false;
+            }
+        });
+
         document.getElementById('signupForm').addEventListener('submit', function(e) {
             const name = document.getElementById('nombre').value.trim();
             const email = document.getElementById('email').value.trim();

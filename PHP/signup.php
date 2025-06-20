@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . '/conexion.php'); 
+require_once(__DIR__ . '/conexion.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'] ?? null;
@@ -7,12 +7,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contrasena = isset($_POST['contrasena']) ? password_hash($_POST['contrasena'], PASSWORD_DEFAULT) : null;
     $rol = $_POST['rol'] ?? null;
 
+    // Campos adicionales para empresa
+    $direccionEmpresa = $_POST['direccion_empresa'] ?? null;
+    $identificacionFiscal = $_POST['identificacion_fiscal'] ?? null;
+
     if ($nombre && $email && $contrasena && $rol) {
         try {
-            $stmt = $pdo->prepare("INSERT INTO usuario (Nombre, Email, Contrasena, IdRol) VALUES (?, ?, ?, ?)");
-            $stmt->execute([$nombre, $email, $contrasena, $rol]);
+            if ($rol == '1') { // Empresa
+                $stmt = $pdo->prepare("INSERT INTO usuario (Nombre, Email, Contrasena, IdRol, DireccionEmpresa, IdentificacionFiscal)
+                                       VALUES (?, ?, ?, ?, ?, ?)");
+                $stmt->execute([$nombre, $email, $contrasena, $rol, $direccionEmpresa, $identificacionFiscal]);
+            } else { // Candidato
+                $stmt = $pdo->prepare("INSERT INTO usuario (Nombre, Email, Contrasena, IdRol)
+                                       VALUES (?, ?, ?, ?)");
+                $stmt->execute([$nombre, $email, $contrasena, $rol]);
+            }
 
-            // Redirige correctamente al HTML de éxito
+
+            
             header("Location: ../HTML/RegistroExitoso.html");
             exit;
 
@@ -28,5 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 } else {
     echo "Acceso no permitido.";
+
 }
-?>
+

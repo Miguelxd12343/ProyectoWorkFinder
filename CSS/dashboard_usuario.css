@@ -88,3 +88,32 @@ body {
   font-size: 24px;
   font-weight: bold;
 }
+
+
+
+.ofertas-lista {
+  margin-top: 40px;
+}
+
+.ofertas-lista h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+.oferta {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.oferta h3 {
+  margin-bottom: 10px;
+  color: #0073b1;
+}
+
+.oferta p {
+  margin: 5px 0;
+}
