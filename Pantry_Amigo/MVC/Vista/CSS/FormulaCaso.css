@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url();
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px 60px;
+    border-bottom: 2px solid #ddd;
+}
+.logo img {
+    width: 100px;
+    height: auto;
+}
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-item-ubi:hover{
+    font-size: larger;
+
+}
+.menu-item-ubi{
+    color: #7ec8a1;
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bold;
+}
+.menu-item {
+    position: relative;
+    padding: 10px;
+    font-weight:bold;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    background: #d9d9d9;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 10;
+    min-width: 150px;
+}
+.submenu li {
+    padding: 10px;
+}
+.submenu li:hover {
+    background: #7ec8a1;
+}
+.menu-item:hover .submenu {
+    display: block;
+}
+
+/*formula*/
+
+body {
+    background-color: #5a88b3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    background: linear-gradient(to right, #5fd1ff, #0056b3);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid black;
+    border-radius: 20px;
+    text-align: center;
+}
+
+button {
+    background: linear-gradient(to right, #5fd1ff, #0056b3);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 80%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: linear-gradient(to right, #4cb8ff, #004494);
+}
+
+.message {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    text-align: center;
+}

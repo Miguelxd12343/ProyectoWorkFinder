@@ -1,0 +1,201 @@
+:root {
+    /* Colores corporativos */
+    --azul-oscuro: #2b577d;
+    --crema: #fffaf3;
+    --verde-claro: #7ec8a1;
+  
+    /* Nuevos tonos de soporte */
+    --gris-oscuro: #555;
+    --gris-claro: #e0e0e0;
+  }
+  
+  /* Reset básico */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--gris-claro);
+    color: var(--gris-oscuro);
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Contenedor principal */
+  .dashboard-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Sidebar: ahora claro */
+  .sidebar {
+    background-color: var(--crema);
+    color: var(--azul-oscuro);
+    width: 240px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .logo-img {
+    width: 120px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  
+  /* Navegación */
+  .nav {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nav a {
+    color: var(--azul-oscuro);
+    text-decoration: none;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .nav a i {
+    margin-right: 10px;
+    font-size: 16px;
+  }
+  
+  /* Hover y activo: verde claro */
+  .nav a:hover,
+  .nav a.active {
+    background-color: var(--verde-claro);
+    color: white;
+  }
+  
+  /* Cerrar sesión al fondo */
+  .cerrar-sesion {
+    margin-top: auto;
+    background-color: var(--azul-oscuro);
+    color: white !important;
+    text-align: center;
+  }
+  
+  .cerrar-sesion:hover {
+    background-color: #1f3f5a;
+  }
+  
+  /* Contenido principal ahora con fondo azul */
+  .main-content {
+    margin-left: 240px;
+    padding: 40px;
+    width: calc(100% - 240px);
+    overflow-y: auto;
+    background-color: var(--azul-oscuro);
+    color: white;
+  }
+  
+  /* Título */
+  .main-content h1 {
+    font-size: 32px;
+    color: var(--crema);
+    margin-bottom: 20px;
+  }
+  
+  /* Párrafos */
+  .main-content p {
+    font-size: 18px;
+    margin-bottom: 1rem;
+    color: #f0f0f0;
+  }
+  
+  /* Barra de búsqueda */
+  .search-bar {
+    display: flex;
+    gap: 1rem;
+    margin: 20px 0;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gris-claro);
+    border-radius: 999px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .search-bar input:focus {
+    border-color: var(--verde-claro);
+  }
+  
+  .search-bar button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--verde-claro);
+    color: white;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .search-bar button:hover {
+    background-color: #65b28a;
+  }
+  
+  /* Tarjetas (por ejemplo, en 'Casos') */
+  .caso, .fundacion {
+    background-color: var(--crema);
+    border: 1px solid var(--gris-claro);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s;
+  }
+  
+  .caso:hover, .fundacion:hover {
+    transform: translateY(-4px);
+  }
+  
+  .caso h4, .fundacion h3 {
+    margin-top: 0;
+    color: var(--azul-oscuro);
+  }
+  
+  .caso p, .fundacion p {
+    margin: 0.5rem 0;
+    color: var(--gris-oscuro);
+  }
+  
+  /* Botones en tarjetas */
+  .caso button, .fundacion button {
+    background-color: var(--verde-claro);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+    margin-right: 0.5rem;
+  }
+  
+  .caso button:hover, .fundacion button:hover {
+    background-color: #65b28a;
+  }
+  
+  /* Secciones ocultas */
+  .seccion-oculta {
+    display: none;
+  }
+  

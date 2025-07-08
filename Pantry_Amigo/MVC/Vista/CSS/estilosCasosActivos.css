@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f4f4f4;
+  padding-top: 100px; /* Para compensar el header fijo */
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 16px;
+}
+
+/* Utilidades */
+.section-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  padding: 60px 0 40px;
+  text-transform: uppercase;
+  font-size: 2rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 5px;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 8px;
+  background: #7ec8a1;
+}
+
+/* Header / Navbar */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  background: #2b577d;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo img {
+  width: 60px;
+  height: auto;
+}
+
+.nav-logo .logo-text {
+  font-size: 2rem;
+  color: #fffaf3;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #fffaf3;
+  padding: 10px 18px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #7ec8a1;
+  color: #2b577d;
+  font-weight: 600;
+}
+
+.nav-item {
+  position: relative;
+}
+
+/* Submenús */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fffaf3;
+  border-radius: 30px;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  z-index: 999;
+}
+
+.submenu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #2b577d;
+  font-weight: normal;
+  transition: 0.3s ease;
+}
+
+.submenu li a:hover {
+  background-color: #7ec8a1;
+  color: #fffaf3;
+  border-radius: 30px;
+}
+
+.nav-item:hover .submenu {
+  display: block;
+}
+
+/* Botones de filtro */
+.botones {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.botones button {
+  background-color: #7ec8a1;
+  padding: 10px 25px;
+  border-radius: 15px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.botones button:hover {
+  background-color: #2b577d;
+  color: #fffaf3;
+}
+
+/* Sección principal */
+.content {
+  margin: 40px auto;
+  padding: 20px;
+  width: 95%;
+  max-width: 1200px;
+  border-radius: 10px;
+  background-color: #d9d9d9;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Estructura principal en dos columnas */
+.content-flex {
+  display: flex;
+  gap: 32px;
+  margin: 40px auto;
+  padding: 20px;
+  width: 95%;
+  max-width: 1200px;
+  border-radius: 10px;
+  background-color: #d9d9d9;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  min-height: 600px;
+}
+
+/* Menú lateral de filtros */
+.filtros-lateral {
+  flex: 0 0 250px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(43, 87, 125, 0.07);
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 220px;
+  max-width: 270px;
+  height: fit-content;
+}
+
+.filtros-lateral h3 {
+  font-size: 1.2rem;
+  color: #2b577d;
+  margin-bottom: 10px;
+  font-family: 'Yusei Magic', sans-serif;
+  text-align: left;
+}
+
+.filtro-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.filtro-group label {
+  font-size: 1rem;
+  color: #2b577d;
+  font-weight: 600;
+}
+
+.filtro-group select {
+  padding: 7px 10px;
+  border-radius: 7px;
+  border: 1px solid #b6c7d6;
+  font-size: 1rem;
+  background: #f4f4f4;
+  color: #222;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.filtro-group select:focus {
+  border: 1.5px solid #7ec8a1;
+}
+
+/* Sección de casos a la derecha */
+.seccion-activa {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 0;
+}
+
+.case {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease-in-out;
+}
+
+.case:hover {
+  transform: translateY(-5px);
+}
+
+.case h3 {
+  font-family: 'Yusei Magic', sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #2b577d;
+  font-size: 1.3rem;
+}
+
+.case p {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 4px 0;
+}
+
+.case img {
+  align-items: center;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.case button {
+  background-color: #7ec8a1;
+  color: #000;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.case button:hover {
+  background-color: #2b577d;
+  color: #fffaf3;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .content-flex {
+    flex-direction: column;
+    gap: 18px;
+    padding: 10px 2vw;
+  }
+  .filtros-lateral {
+    flex: unset;
+    max-width: 100vw;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 18px 10px;
+  }
+  .seccion-activa {
+    width: 100%;
+  }
+}

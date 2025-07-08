@@ -1,0 +1,63 @@
+/* Estilo base para la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Título principal */
+  h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para los detalles de la fundación */
+  .fundacion-detalles {
+    margin-top: 30px;
+  }
+  
+  .fundacion-detalles h2 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  .fundacion-detalles p {
+    font-size: 1.1em;
+    margin: 8px 0;
+    color: #555;
+  }
+  
+  .fundacion-detalles strong {
+    color: #2c3e50;
+  }
+  
+  /* Botón para volver */
+  .volver-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .volver-btn:hover {
+    background-color: #2980b9;
+  }
+  

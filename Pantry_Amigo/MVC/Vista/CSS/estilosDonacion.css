@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  width: 100%;
+}
+
+.section-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  padding: 10px 0 40px;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 5px;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 8px;
+  background: #7ec8a1;
+}
+
+/*Navbar styling*/
+header {
+
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  background: #2b577d;
+}
+
+.navbar .nav-menu .nav-link {
+  color: #fffaf3;
+  padding: 10px 18px;
+  font-size: 1.12rem;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+.navbar .nav-menu .nav-link:hover {
+  background-color: #7ec8a1;
+  color: #2b577d;
+  font-weight: 600;
+}
+
+.navbar :where(#menu-close-button, #menu-open-button) {
+  display: none;
+}
+
+.navbar .nav-logo .logo-text {
+  font-size: 2.0rem;
+  color: #fffaf3;
+}
+
+.nav-logo {
+  display: flex;
+  gap: 10px;
+}
+
+/* NAVBAR */
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.nav-logo img {
+  width: 60px;
+  height: auto;
+}
+
+
+/* Menu principal */
+.navbar .nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.submenu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #2b577d;
+  text-decoration: none;
+  font-weight: normal;
+  transition: background-color 0.3s ease;
+}
+
+.submenu li a:hover {
+  background-color: #7ec8a1;
+  color: #fffaf3;
+}
+
+.nav-item:hover .submenu {
+  display: block;
+}
+
+/******/
+.section-content{
+  border-radius: 30px;
+  padding-top: 130px;
+  z-index: 1;
+  width: 800px;
+}
+.section-donation{
+  border-radius: 30px;
+  padding: 50px 80px 10px;
+  z-index: 1;
+  background-color: #d9d9d9;
+  width: 800px;
+}
+
+.detail-section {
+  display: flex;
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 20px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.caso-imagen {
+  max-width: 30%;
+  max-height: auto;
+  border-radius: 12px;
+}
+
+.detail-description{
+  padding: 20px;
+}
+
+.caso-nombre {
+  line-height: 35px;
+  text-align: start;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #2b577d;
+}
+
+.caso-descripcion {
+  line-height: 20px;
+  text-align: justify;
+  font-size: 1rem;
+  color: #444;
+}
+
+.form-section {
+  max-width: 700px;
+  margin: 0 auto 80px;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.form-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #2b577d;
+}
+
+.donation-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 20px;
+  color: #333;
+}
+
+.donation-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.submit-button {
+  margin-top: 30px;
+  width: 100%;
+  background-color: #2b577d;
+  color: #fffaf3;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #7ec8a1;
+  color: #2b577d;
+}
+
+.error-msg {
+  color: red;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 40px 20px;
+}
+
+
+.mi-popup {
+  background-color: #ccc;
+  border: 5px solid #2b577d;
+  border-radius: 10px;
+}
+
+.mi-titulo {
+  font-family: "Poppins", sans-serif;
+  color: #2b577d;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.mi-icono {
+  color: #e67e22 !important;
+}
+
+.mi-boton {
+  background-color: #7ec8a1 !important;
+  color: #ffffff !important;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+
+
+@media (max-width: 768px) {
+  
+  .section-content {
+    padding: 60px 20px;
+  }
+
+  .form-section, .detail.section {
+    padding: 30px 20px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    padding: 40px 0 60px;
+  }
+
+  .form-title {
+    font-size: 1.3rem;
+  }
+}
+
+
+

@@ -1,0 +1,222 @@
+/* Paleta de colores */
+:root {
+    --azul-oscuro: #2b577d;
+    --crema: #fffaf3;
+    --gris: #d9d9d9;
+    --verde-claro: #7ec8a1;
+  }
+  
+  /* Fondo general */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--crema);
+    color: #333;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    background-color: var(--azul-oscuro);
+    color: white;
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px 0;
+  }
+  
+  .logo img {
+    max-width: 100px;  
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu li a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .menu li a:hover,
+  .menu li a.active {
+    background-color: var(--verde-claro);
+    color: #2b577d;
+    font-weight: bold;
+  }
+  
+  /* Contenido principal */
+  .content {
+    margin-left: 240px;
+    padding: 30px;
+  }
+  
+  /* Título */
+  .header h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--azul-oscuro);
+  }
+  
+  /* Tarjetas para Fundaciones */
+  .fundacion {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .fundacion:hover {
+    transform: translateY(-3px);
+  }
+  
+  .fundacion h3 {
+    margin-top: 0;
+    color: var(--azul-oscuro);
+  }
+  
+  .fundacion p {
+    margin: 6px 0;
+    color: #555;
+  }
+  
+  /* Botones */
+  .fundacion button {
+    background-color: var(--azul-oscuro);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.2s;
+  }
+  
+  .fundacion button:hover {
+    background-color: #1e3f5c;
+  }
+  
+  /* Barra de búsqueda */
+  .search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid var(--gris);
+    border-radius: 5px;
+  }
+  
+  .search-bar button {
+    background-color: var(--verde-claro);
+    color: #2b577d;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: #65b28a;
+  }
+  
+  /* Secciones ocultas */
+  .seccion-oculta {
+    display: none;
+  }
+
+  /* Íconos del menú */
+    .menu a i {
+      margin-right: 8px;
+    }
+
+    /* Estilo de tarjetas de fundaciones */
+    .fundacion {
+      background-color: #fffaf3;
+      border: 1px solid #d9d9d9;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .fundacion:hover {
+      transform: scale(1.02);
+    }
+
+    .fundacion h3 {
+      color: #2b577d;
+      margin-bottom: 10px;
+    }
+
+    .fundacion p {
+      margin: 5px 0;
+    }
+
+    .fundacion p i {
+      margin-right: 6px;
+      color: #2b577d;
+    }
+
+    .fundacion button {
+      margin-right: 10px;
+      background-color: #7ec8a1;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .fundacion button:hover {
+      background-color: #5ca983;
+    }
+
+    .search-bar {
+      margin: 15px 0;
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-bar input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      flex-grow: 1;
+    }
+
+    .search-bar button {
+      padding: 8px 12px;
+      background-color: #2b577d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .search-bar button:hover {
+      background-color: #1f3e5b;
+    }
+  

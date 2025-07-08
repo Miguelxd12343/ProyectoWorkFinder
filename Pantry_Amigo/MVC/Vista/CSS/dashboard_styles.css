@@ -1,0 +1,143 @@
+/* /Pantry_Amigo/MVC/Vista/CSS/dashboard_styles.css (Versión Final con Alineación Forzada) */
+
+/* Variables de colores */
+:root {
+  --primary-color: #2b577d;
+  --secondary-color: #65b28a;
+  --accent-color: #f8f9fa;
+  --danger-color: #e74c3c;
+  --success-color: #28a745;
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f7f6;
+}
+
+/* Dashboard container */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, var(--primary-color) 0%, #1a3a5c 100%);
+  color: white;
+  padding: 0px 0;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  transition: width 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.logo {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 20px;
+}
+.logo-img {
+  max-width: 165px;
+  height: auto;
+  transition: max-width 0.3s ease-in-out;
+}
+.nav.menu {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.menu-links {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* CAMBIO CLAVE Y DEFINITIVO PARA LA ALINEACIÓN */
+.nav a.nav-link {
+  display: flex !important; /* Se fuerza el display flex para anular cualquier otra regla */
+  align-items: center !important; /* Se fuerza la alineación vertical */
+  padding: 10px 25px;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  overflow: hidden; 
+}
+.nav a.nav-link:hover, .nav a.nav-link.active {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border-left-color: var(--secondary-color);
+}
+.nav a.nav-link i {
+  margin-right: 10px;
+  width: 20px;
+  flex-shrink: 0; /* Evita que el ícono se encoja */
+}
+.nav a.nav-link span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Muestra "..." si el texto es muy largo */
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  background: white;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow-y: auto;
+}
+.header {
+  background: var(--primary-color);
+  color: white;
+  padding: 25px 30px;
+  margin-bottom: 0;
+  border-radius: 15px 15px 0 0;
+}
+.header h2 { margin: 0; font-size: 1.8rem; font-weight: 300; }
+
+.seccion-activa { display: block; padding: 30px; animation: fadeIn 0.5s ease; }
+.seccion-oculta { display: none; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* El resto de los estilos no necesitan cambios */
+.caso-card { background: white; border: 1px solid #e0e0e0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: all 0.3s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; height: 100%; }
+.caso-card::before { content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%); }
+.caso-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+.caso-card .card-body { padding: 25px; flex-grow: 1; }
+.caso-card .card-title { color: var(--primary-color); font-weight: 600; }
+.caso-card .card-text { color: #555; line-height: 1.6; }
+.caso-card .acciones { padding: 20px 25px; background-color: #f8f9fa; border-top: 1px solid #e0e0e0; }
+.container-perfil { background: white; border-radius: 20px; padding: 40px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); display: flex; gap: 40px; align-items: center; }
+.image-box img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary-color); box-shadow: 0 8px 25px rgba(0,0,0,0.15); margin-bottom: 20px; }
+.custom-file-upload { display: inline-block; background: linear-gradient(135deg, var(--primary-color) 0%, #3d6a94 100%); color: white; padding: 12px 25px; border-radius: 25px; cursor: pointer; font-weight: 600; }
+.voluntario { background: white; border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+.voluntario h4 { color: var(--primary-color); font-weight: 600; }
+.voluntario .horarios { background: #f8f9fa; border-left: 4px solid var(--primary-color); margin-top: 15px; padding: 15px; border-radius: 8px; }
+#form-asignar-horario { display: none; background: white; border: 1px solid #dee2e6; border-radius: 15px; padding: 25px; margin: 20px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+#ayuda { background: white; border-radius: 15px; padding: 30px; }
+#ayuda h3, #ayuda h4 { color: var(--primary-color); }
+#ayuda ul li { list-style-type: none; margin-bottom: 10px; padding: 10px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid var(--secondary-color); }
+.form-label { font-weight: 600; color: var(--primary-color); margin-bottom: 8px; }
+.form-control, .form-select { border: 1px solid #ced4da; border-radius: 8px; padding: 12px 15px; transition: all 0.3s ease; font-size: 0.95rem; }
+.form-control:focus, .form-select:focus { border-color: var(--primary-color); box-shadow: 0 0 0 0.25rem rgba(43, 87, 125, 0.25); }
+.btn-custom-primary { background: linear-gradient(135deg, var(--primary-color) 0%, #3d6a94 100%); color: white; border: none; padding: 10px 25px; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; }
+.btn-custom-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(43, 87, 125, 0.4); }
+.btn-success-custom { background: linear-gradient(135deg, var(--success-color) 0%, #1e7e34 100%); color: white; border: none; padding: 12px 30px; border-radius: 25px; font-weight: 600; }
+.alert-custom { position: fixed; top: 20px; right: 20px; z-index: 1055; min-width: 300px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+/* Estilos para Sidebar Colapsable */
+.sidebar-toggle-link {
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.sidebar.collapsed { width: 80px; }
+.sidebar.collapsed .logo-img { max-width: 45px; }
+.sidebar.collapsed .nav-link span { display: none; }
+.sidebar.collapsed .nav-link i { margin-right: 0; }
+.sidebar.collapsed .nav-link { text-align: center; padding: 15px 10px; }

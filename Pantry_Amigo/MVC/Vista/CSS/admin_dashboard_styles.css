@@ -1,0 +1,172 @@
+/* /Pantry_Amigo/MVC/Vista/CSS/admin_dashboard_styles.css  */
+
+/* Variables de colores */
+:root {
+  --primary-color: #34495e;
+  --secondary-color: #1abc9c;
+  --light-bg: #f8f9fa;
+  --danger-color: #e74c3c;
+  --gradient-primary: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ecf0f1;
+}
+
+/* Contenedor principal del dashboard */
+.dashboard-container {
+  display: flex;
+  /* CAMBIO: Se define una altura fija igual a la de la pantalla */
+  height: 100vh;
+  /* CAMBIO: Se previene el scroll en el contenedor principal */
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  transition: width 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  /* CAMBIO: Se asegura que la barra no se encoja */
+  flex-shrink: 0;
+}
+.sidebar .logo {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 20px;
+}
+.logo-img { max-width: 170px; transition: max-width 0.3s ease-in-out; }
+.nav.menu {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.nav a.nav-link {
+  display: block;
+  padding: 15px 25px;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.nav a.nav-link:hover, .nav a.nav-link.active {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border-left-color: var(--secondary-color);
+}
+.nav a.nav-link i { margin-right: 12px; width: 20px; }
+
+/* Contenido Principal */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  /* CAMBIO CLAVE: Se añade una barra de scroll SÓLO a esta sección */
+  overflow-y: auto;
+}
+.header {
+  background: white;
+  color: var(--primary-color);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.header h2 { margin: 0; font-size: 1.8rem; font-weight: 600; }
+
+.seccion-oculta { display: none; }
+.seccion-activa { display: block; animation: fadeIn 0.5s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Tarjetas para Fundaciones y Casos */
+.card-item {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-left: 5px solid var(--primary-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+.card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+.card-item .card-body { padding: 25px; }
+.card-item .card-title { color: var(--primary-color); font-weight: 600; }
+.card-item .card-text i {
+  color: var(--secondary-color);
+  margin-right: 8px;
+  width: 16px;
+}
+.card-item .acciones { padding: 20px 25px; background-color: var(--light-bg); border-top: 1px solid #e0e0e0; }
+
+/* Formularios en Modales */
+.form-label { font-weight: 600; color: #555; }
+.form-control, .form-select {
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(52, 73, 94, 0.25);
+}
+
+/* Notificaciones */
+.alert-custom {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1055;
+  min-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* --- ESTILOS PARA SIDEBAR COLAPSABLE --- */
+
+/* Estilos para el botón de toggle en la cabecera */
+.header #sidebar-toggle {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-right: 15px;
+  padding: 5px 10px;
+}
+.header #sidebar-toggle:hover {
+  color: var(--secondary-color);
+}
+
+/* Estilo para el enlace de ocultar/mostrar al final de la barra */
+.sidebar-toggle-link {
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para cuando la barra está colapsada */
+.sidebar.collapsed {
+  width: 80px;
+}
+.sidebar.collapsed .logo-img {
+  max-width: 45px;
+}
+.sidebar.collapsed .nav-link span {
+  display: none;
+}
+.sidebar.collapsed .nav-link i {
+  margin-right: 0;
+}
+.sidebar.collapsed .nav-link {
+  text-align: center;
+  padding: 15px 10px;
+}
